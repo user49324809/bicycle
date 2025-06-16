@@ -1,0 +1,272 @@
+/* Футер по умолчанию */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 40px;
+}
+
+#footer_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer_logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.footer h4 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.footer p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+.footer p a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.1rem;
+}
+
+.footer p a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: rgba(184, 184, 114, 0.823);
+}
+
+/* Стили для социальных иконок */
+.social-icon {
+    font-size: 24px;
+    margin: 0 10px;
+    color: #333;
+    transition: all 0.3s ease;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.social-icon:hover {
+    color: #007bff;
+    box-shadow: 0 0 5px 2px #007bff;
+}
+
+.social-icon:active {
+    color: #0056b3;
+    box-shadow: 0 0 8px 4px #0056b3;
+}
+
+/* ===== Адаптивные стили для футера ===== */
+
+/* 360px - очень маленькие экраны */
+@media screen and (max-width: 360px) {
+    #footer_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 120px;
+        margin-bottom: 15px;
+    }
+
+    .footer h4 {
+        font-size: 1.2rem;
+    }
+
+    .footer p {
+        font-size: 0.9rem;
+    }
+
+    .footer p a {
+        font-size: 1rem;
+        margin: 0 5px;
+    }
+
+    .social-icon {
+        font-size: 20px;
+        margin: 0 5px;
+    }
+}
+
+/* 480px - экраны маленьких смартфонов */
+@media screen and (max-width: 480px) {
+    #footer_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 130px;
+        margin-bottom: 20px;
+    }
+
+    .footer h4 {
+        font-size: 1.3rem;
+    }
+
+    .footer p {
+        font-size: 1rem;
+    }
+
+    .footer p a {
+        font-size: 1.1rem;
+    }
+
+    .social-icon {
+        font-size: 22px;
+    }
+}
+
+/* 640px - маленькие планшеты */
+@media screen and (max-width: 640px) {
+    #footer_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 150px;
+        margin-bottom: 25px;
+    }
+
+    .footer h4 {
+        font-size: 1.4rem;
+    }
+
+    .footer p {
+        font-size: 1.1rem;
+    }
+
+    .footer p a {
+        font-size: 1.2rem;
+    }
+
+    .social-icon {
+        font-size: 24px;
+    }
+}
+
+/* 768px - экраны планшетов */
+@media screen and (max-width: 768px) {
+    #footer_container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 170px;
+        margin-bottom: 30px;
+    }
+
+    .footer h4 {
+        font-size: 1.5rem;
+    }
+
+    .footer p {
+        font-size: 1.1rem;
+    }
+
+    .footer p a {
+        font-size: 1.2rem;
+    }
+
+    .social-icon {
+        font-size: 26px;
+    }
+}
+
+/* 1024px - стандартные планшеты и ноутбуки */
+@media screen and (max-width: 1024px) {
+    #footer_container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 180px;
+        margin-bottom: 0;
+    }
+
+    .footer h4 {
+        font-size: 1.6rem;
+    }
+
+    .footer p {
+        font-size: 1.2rem;
+    }
+
+    .footer p a {
+        font-size: 1.3rem;
+    }
+
+    .social-icon {
+        font-size: 28px;
+    }
+}
+
+/* 1280px - для крупных экранов */
+@media screen and (max-width: 1280px) {
+    #footer_container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 190px;
+    }
+
+    .footer h4 {
+        font-size: 1.7rem;
+    }
+
+    .footer p {
+        font-size: 1.3rem;
+    }
+
+    .footer p a {
+        font-size: 1.4rem;
+    }
+
+    .social-icon {
+        font-size: 30px;
+    }
+}
+
+/* 1366px - стандартные ноутбуки */
+@media screen and (max-width: 1366px) {
+    #footer_container {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .footer_logo {
+        width: 200px;
+    }
+
+    .footer h4 {
+        font-size: 1.8rem;
+    }
+
+    .footer p {
+        font-size: 1.4rem;
+    }
+
+    .footer p a {
+        font-size: 1.5rem;
+    }
+
+    .social-icon {
+        font-size: 32px;
+    }
+}

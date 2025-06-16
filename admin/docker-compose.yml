@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  web:
+    build: .
+    container_name: admin
+    ports:
+      - "8090:80"
+    volumes:
+      - .:/var/www/html
+  db: 
+    image: mysql
+    container_name: admin_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=bike_db
+    ports:
+      - "3307:3306"

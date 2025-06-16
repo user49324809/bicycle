@@ -1,0 +1,668 @@
+/* Общие стили для контейнера */
+header {
+    width: 100% !important;
+    color: #fff;
+    padding: 20px 0;
+    display: flex !important;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img_logo {
+    height: 50px;
+    width: auto;
+    margin-left: 20px;
+}
+
+.p_logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 10px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+/*.nav-links a:hover {
+    color: #e74c3c;
+}*/
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    background-color: rgba(184, 184, 114, 0.823);
+    min-width: 160px;
+    border-radius: 5px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s ease;
+}
+
+/*.dropdown-content a:hover {
+    background-color: #e74c3c;
+}*/
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+button{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.burger-menu {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 21px;
+    margin-right: 20px;
+}
+
+.burger-menu div {
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+}
+
+/* Стили для кнопок */
+button.header_button {
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 20px;
+    transition: background-color 0.3s ease;
+}
+
+button.header_button:hover {
+    background-color: #c0392b;
+}
+
+.header_button{
+    display: flex;
+}
+
+.header_button_adaptive{
+    display: none;
+}
+
+/* Адаптивность для мобильных устройств */
+/* ===== Адаптивные стили header + nav + burger ===== */
+/* 360px */
+@media screen and (max-width: 360px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header_button_adaptive{
+        display: flex;
+        margin-right: 30px;
+        gap: 3px;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* сразу под хедером */
+        left: 0;
+        right: 0;
+        width: 100%; /* можно даже не писать, left+right это уже делают */
+        background-color: aquamarine;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        max-height: 1000px;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img_logo {
+        height: 40px;
+        display: none;
+    }
+
+    .p_logo {
+        font-size: 18px;
+        display: none;
+    }
+
+    button.header_button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* 480px */
+@media screen and (max-width: 480px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header_button_adaptive{
+        display: flex;
+        margin-right: 30px;
+        gap: 3px;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* сразу под хедером */
+        left: 0;
+        right: 0;
+        width: 100%; /* можно даже не писать, left+right это уже делают */
+        background-color: aquamarine;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        max-height: 1000px;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img_logo {
+        height: 45px;
+    }
+
+    .p_logo {
+        font-size: 20px;
+    }
+
+    button.header_button {
+        padding: 9px 18px;
+        font-size: 15px;
+    }
+}
+
+/* 640px */
+@media screen and (max-width: 640px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header_button_adaptive{
+        display: flex;
+        margin-right: 30px;
+        gap: 3px;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* сразу под хедером */
+        left: 0;
+        right: 0;
+        width: 100%; /* можно даже не писать, left+right это уже делают */
+        background-color: aquamarine;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        max-height: 1000px;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .img_logo {
+        height: 45px;
+        display: none;
+    }
+
+    .p_logo {
+        font-size: 22px;
+    }
+
+    button.header_button {
+        padding: 10px 18px;
+    }
+}
+
+/* 768px */
+@media screen and (max-width: 768px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header_button_adaptive{
+        display: flex;
+        margin-right: 30px;
+        gap: 3px;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* сразу под хедером */
+        left: 0;
+        right: 0;
+        width: 100%; /* можно даже не писать, left+right это уже делают */
+        background-color: aquamarine;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        max-height: 1000px;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .sidebar {
+        margin: 10px 0;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr !important;
+    }
+
+    .button {
+        margin-top: 10px;
+    }
+}
+
+/* 860px */
+@media screen and (max-width: 860px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header_button_adaptive{
+        display: flex;
+        margin-right: 30px;
+        gap: 3px;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* сразу под хедером */
+        left: 0;
+        right: 0;
+        width: 100%; /* можно даже не писать, left+right это уже делают */
+        background-color: aquamarine;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        max-height: 1000px;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 1024px */
+@media screen and (max-width: 1024px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header_button_adaptive{
+        display: flex;
+        margin-right: 30px;
+        gap: 3px;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* сразу под хедером */
+        left: 0;
+        right: 0;
+        width: 100%; /* можно даже не писать, left+right это уже делают */
+        background-color: aquamarine;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        max-height: 1000px;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 1280px */
+@media screen and (max-width: 1280px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header_button_adaptive{
+        display: flex;
+        margin-right: 30px;
+        gap: 3px;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* сразу под хедером */
+        left: 0;
+        right: 0;
+        width: 100%; /* можно даже не писать, left+right это уже делают */
+        background-color: aquamarine;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        max-height: 1000px;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* 1366px */
+@media screen and (max-width: 1366px) {
+    header {
+        position: relative;
+        width: 100%;
+    }
+
+    .header_button_adaptive{
+        display: flex;
+        margin-right: 30px;
+        gap: 3px;
+    }
+
+    .header_button{
+        display: none;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%; /* сразу под хедером */
+        left: 0;
+        right: 0;
+        width: 100%; /* можно даже не писать, left+right это уже делают */
+        background-color: aquamarine;
+        opacity: 0;
+        max-height: 0;
+        overflow: hidden;
+        pointer-events: none;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        border-radius: 0 0 10px 10px;
+        z-index: 10;
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-links.active {
+        opacity: 1;
+        max-height: 1000px;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .burger-menu {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+

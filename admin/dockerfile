@@ -1,0 +1,4 @@
+FROM php:8.2.0-apache
+
+# установка расширения mysqli для работы с MySQL для php
+RUN docker-php-ext-install pdo mysqli pdo_mysql

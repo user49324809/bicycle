@@ -1,0 +1,152 @@
+/* Общие стили */
+.container{
+    max-width: 100% !important;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 0 20px;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+}
+
+section {
+    padding: 40px 20px;
+    margin: 20px 0;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    text-align: center;
+}
+
+.products ul {
+    list-style: none;
+    padding: 0;
+}
+
+.products li {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.certificate-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.certificate-gallery img {
+    width: 30%;
+    max-width: 150px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* для слайдера*/
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        width: 40px;  
+        height: 40px;
+        background-color: #007bff;  
+        border-radius: 50%;  
+    }
+
+    
+    .carousel-control-prev,
+    .carousel-control-next {
+        font-size: 30px;
+        color: #007bff; 
+    }
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        background-color: rgba(0, 123, 255, 0.1); 
+        color: #0056b3; 
+    } 
+
+.employee-card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.employee-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.employee-info h3 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.employee-info p {
+    margin: 5px 0;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fafafa;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    display: block;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #2ecc71;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #27ae60;
+}
+
+/* Мобильные стили */
+@media (max-width: 768px) {
+    .certificate-gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .employee-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .employee-card img {
+        margin-bottom: 10px;
+    }
+
+    form {
+        padding: 15px;
+    }
+}

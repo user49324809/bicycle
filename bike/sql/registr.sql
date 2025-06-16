@@ -1,0 +1,5 @@
+CREATE TABLE registr (
+    login VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    pass VARCHAR(255) NOT NULL
+);

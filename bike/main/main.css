@@ -1,0 +1,514 @@
+body {
+    font-family: "Segoe UI", sans-serif;
+    background-color: #ffffff;
+    color: #333;
+    line-height: 1.6;
+    background-image: url("../image/bike_back.png");  
+}
+
+header{
+    width: 100% !important;
+}
+
+/* Стили бургер-меню */
+.burger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.burger-menu div {
+    height: 4px;
+    background-color: #333;
+    border-radius: 2px;
+}
+
+/* Скрываем навигацию на мобилках по умолчанию */
+.nav-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.title, .section_info, .categories, .reviews, .promo-offer, .guarantees, .sidebar {
+    width: 95% !important;
+    align-items: center !important;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px !important;
+}
+
+.title{
+    height: 40%;
+}
+
+.card_reviews {
+    background-image: url("../image/review_back.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-reviews {
+    display: grid;
+    grid-template-rows: auto 1fr auto auto;
+    gap: 0.75rem;
+    border: 2px solid #dee2e6;
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.85); /* полупрозрачный фон для читаемости */
+    width: 100%;
+}
+
+.card-reviews .card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.card-reviews .card-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+.card_reviews:hover {
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+#starRating .star {
+    font-size: 1.8rem;
+    color: #ccc;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+    #starRating .star:hover,
+    #starRating .star.hovered,
+    #starRating .star.selected 
+    {
+    color: #ffc107;
+}
+
+.main {
+    padding: 40px 0;
+}
+
+.burger-menu {
+    display: none;
+}
+
+.title h2 {
+    font-size: 28px;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.students_list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.menu-item a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 5px 10px;
+    border-radius: 8px;
+    transition: background 0.3s;
+}
+
+.menu-item a:hover {
+    background-color: #007bff !important;
+    color: #fff;
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #007bff;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.sidebar form {
+    margin-top: 10px;
+}
+
+.sidebar input[type="email"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.sidebar button {
+    padding: 8px 15px;
+    background-color: #007bff !important;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.infoblock_about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.infoblock {
+    flex: 1;
+}
+
+.infoblock ul {
+    margin-top: 10px;
+    padding-left: 20px;
+}
+
+.image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Категории */
+.hover-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.img-container img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.img-container:hover img {
+    transform: scale(1.05);
+}
+
+.category_card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.category-card h3 {
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.category-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px;
+}
+
+.category-card p {
+    margin-bottom: 15px;
+}
+
+.category-card .btn {
+    padding: 10px 15px;
+    background-color: #007bff !important;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+}
+
+/* Отзывы */
+.review_rating .star {
+    color: #ffc107;
+    margin-right: 2px;
+}
+
+textarea#review_text {
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    resize: vertical;
+}
+
+#submit_review {
+    background-color: #007bff !important;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Гарантии */
+.guarantees-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding-left: 0;
+    margin-top: 20px;
+}
+
+.guarantees-list li {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.guarantees-list i {
+    color: #007bff;
+}
+
+/* Адаптивность */
+/* ===== Адаптивные стили ===== */
+
+/* Мобильные устройства: до 360px */
+@media screen and (max-width: 360px) {
+    body {
+        max-width: 360px;
+    }
+
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Смартфоны: до 480px */
+@media screen and (max-width: 480px) {
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+
+    .title h2 {
+        font-size: 20px;
+    }
+}
+
+/* Крупные смартфоны / малые планшеты: до 640px */
+@media screen and (max-width: 640px) {
+    body {
+        max-width: 640px;
+    }
+
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+
+    .title h2 {
+        font-size: 22px;
+    }
+
+    .sidebar {
+        padding: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 16px;
+    }
+}
+
+/* Планшеты: до 768px */
+@media screen and (max-width: 768px) {
+    body {
+        max-width: 768px;
+    }
+
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+
+    .title h2 {
+        font-size: 24px;
+    }
+}
+
+/* Устройства до 860px */
+@media screen and (max-width: 860px) {
+    body {
+        max-width: 860px;
+    }
+
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Планшеты и небольшие ноутбуки: до 1024px */
+@media screen and (max-width: 1024px) {
+    body {
+        max-width: 1024px;
+    }
+
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Ноутбуки: до 1280px */
+@media screen and (max-width: 1280px) {
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Мониторы: до 1366px */
+@media screen and (max-width: 1366px) {
+    body {
+        max-width: 1366px;
+    }
+
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Большие экраны: до 1920px */
+@media screen and (max-width: 1920px) {
+    body {
+        max-width: 1920px;
+    }
+
+    .infoblock_about,
+    .students_list {
+        flex-direction: column;
+    }
+
+    .burger-menu {
+        display: flex;
+    }
+
+    .category_card {
+        grid-template-columns: 1fr;
+    }
+}

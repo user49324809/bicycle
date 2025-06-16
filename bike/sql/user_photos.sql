@@ -1,0 +1,9 @@
+CREATE TABLE user_photos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    login VARCHAR(255) NOT NULL,
+    photo_path VARCHAR(255) NOT NULL,
+    caption TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (login) REFERENCES registr(login) ON DELETE CASCADE
+);
+

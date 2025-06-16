@@ -1,0 +1,126 @@
+/* Общая стилизация контейнера товаров */
+.category-products {
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.category-products h3 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.category-products p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+/* Сетка карточек товаров */
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Карточка товара */
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    max-width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+    height: 180px;
+}
+
+.product-card h4 {
+    font-size: 1.2rem;
+    margin: 10px 0 5px;
+    color: #333;
+    text-align: center;
+}
+
+.product-card .description {
+    font-size: 0.95rem;
+    text-align: center;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    font-weight: bold;
+    color: #2a7a2a;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* Количество и кнопка */
+.product-card input.quantity {
+    width: 60px;
+    padding: 5px;
+    text-align: center;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.product-card .btn {
+    background-color: #2a7a2a;
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.3s ease;
+}
+
+.product-card .btn:hover {
+    background-color: #256d25;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .category-products h3 {
+        font-size: 1.5rem;
+    }
+
+    .product-card img {
+        height: 160px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product-card {
+        padding: 10px;
+    }
+
+    .product-card h4 {
+        font-size: 1rem;
+    }
+
+    .product-card .description {
+        font-size: 0.9rem;
+    }
+
+    .product-card .btn {
+        font-size: 0.85rem;
+        padding: 6px 10px;
+    }
+}

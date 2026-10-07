@@ -1,0 +1,24 @@
+{
+  "name": "bicycle-auth-case-study",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Companion repository for a real authentication bug: PHP password verification mistake rewritten as a tested Express/PostgreSQL flow.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node --env-file=.env src/server.js",
+    "migrate": "node --env-file=.env src/db/migrate.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "connect-pg-simple": "^10.0.0",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "pg": "^8.23.1"
+  },
+  "devDependencies": {
+    "supertest": "^7.3.1"
+  }
+}

@@ -17,8 +17,8 @@ This repository keeps that mistake as a documented case study and rebuilds the f
 - generic login failures for unknown users and wrong passwords;
 - session-id regeneration after successful authentication;
 - protected routes and logout;
-- PostgreSQL-backed sessions for production startup;
-- automated HTTP and password tests.
+- PostgreSQL-backed sessions created through migrations rather than runtime DDL;
+- automated HTTP, password, configuration, and persistence tests.
 
 ## The original bug
 
@@ -52,7 +52,7 @@ PBKDF2       userId only
  test fake   PostgreSQL
                 |
                 v
-              users
+        users + sessions
 ```
 
 The HTTP layer depends on a small repository interface instead of importing PostgreSQL directly. Tests use an in-memory implementation; production uses `src/users/postgresUserRepository.js`.
@@ -73,7 +73,8 @@ src/
     └── postgresUserRepository.js
 
 migrations/
-└── 001_users.sql
+├── 001_users.sql
+└── 002_sessions.sql
 
 tests/
 ├── auth.test.js
@@ -106,13 +107,15 @@ Create a local environment file:
 cp .env.example .env
 ```
 
-Edit `DATABASE_URL` and replace `SESSION_SECRET` with your own random value of at least 32 characters.
+Edit `DATABASE_URL` and replace `SESSION_SECRET` with your own random value of at least 32 characters. The placeholder in `.env.example` is intentionally too short, so the application refuses to start until it is replaced.
 
-Create the database, then run the user-table migration:
+Create the database, then apply both migrations:
 
 ```bash
 npm run migrate
 ```
+
+`001_users.sql` creates the user table and its uniqueness constraints. `002_sessions.sql` creates the `user_sessions` table used by `connect-pg-simple`.
 
 Start the API:
 
@@ -171,7 +174,8 @@ The suite checks the behaviors that matter most to this case study:
 - successful login creates a reusable authenticated session;
 - protected routes reject anonymous requests;
 - logout invalidates the session;
-- the SQL adapter uses placeholders and the schema enforces uniqueness.
+- the SQL adapter uses placeholders and the schema enforces uniqueness;
+- session storage is created by migrations rather than by the application process at startup.
 
 ## Security decisions
 
@@ -193,7 +197,7 @@ The application checks for an existing login/email to return a friendly `409`, b
 
 After password verification, the application regenerates the session ID and stores only `userId` in the session. Passwords and password hashes are not session data.
 
-Production startup uses `connect-pg-simple`; Express's default in-memory session store is intentionally not used as a production store.
+Production startup uses `connect-pg-simple`. The `user_sessions` table is created by `002_sessions.sql`, and `createTableIfMissing` is disabled in the running server. This keeps schema creation in the migration step instead of requiring the application process to create tables at runtime. Express's default in-memory session store is intentionally not used as the production store.
 
 ### SQL
 
